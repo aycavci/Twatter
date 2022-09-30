@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ user['username'] }}{% endblock %}</h1>
+  <p>User #{{ user['id'] }}</p>
+{% endblock %}
+
+{% block content %}
+  <div>
+    <br>
+    <img class="hostImage" src="/static/profilePics/default.png">
+    {% if g.user['id'] == user['id'] %}
+      <a class="action" href="" >Edit</a>
+    {% endif %}
+  </div>
+  <hr>
+  <div>
+    <p>
+      Bio bio bio bio bio bio bio bio bio bio. Bio bio bio bio bio bio bio bio bio bio.Bio bio bio bio bio bio bio bio bio bio.
+    </p>
+    {% if g.user['id'] == user['id'] %}
+      <a class="action" href="" >Edit</a>
+    {% elif g.user %}
+      <a class="action" href="" >Follow!</a>
+    {% endif %}
+  </div>
+{% endblock %}

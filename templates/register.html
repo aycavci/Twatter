@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <link type="text/css" rel="stylesheet" href="https://getbootstrap.com/1.0.0/assets/css/bootstrap-1.0.0.min.css">
+    <title>Twitter Lite</title>
+  </head>
+  <body>
+    <h1>{{header}}</h1>
+    <div class="container">
+      <form method='POST' action='/register'>
+            <div class="form-group">
+              <label for="usernameInput">Username</label>
+              <input name="username" type="username" class="form-control" id="usernameInput" placeholder="Username">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>  
+            </div>
+      </form>
+    </div>
+  </body>
+</html>

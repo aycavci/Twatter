@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <link type="text/css" rel="stylesheet" href="https://getbootstrap.com/1.0.0/assets/css/bootstrap-1.0.0.min.css">
+    <title>Twitter Lite</title>
+  </head>
+  <body>
+    <!-- LOGGED IN USER'S FRONT PAGE----------------------->
+    {% if logged_in%}
+    <ul class="tabs">
+      <li class="active"><a href="">Home</a></li>
+      <li><a href="/profile">{{user}}'s Profile</a></li>
+      <li><a href="/tweets">{{user}}'s Tweets</a></li>
+      <li><a href="/followers">My Followers</a></li>
+      <li><a href="/following">Following</a></li>
+      <li><a href="/suggested">Suggested</a></li>
+      <li><a href="/d3">D3.js</a></li>
+      <li><a href></a></li>
+      <li> <form action="/search" method="GET">
+          <div class="form-group">
+              <input name="search" type="text" class="form-control" placeholder="Search for a user">
+              <button type="submit" class="btn btn-primary">Search</button>  
+          </div></form>
+          <form action=/logout>
+            <button class="btn btn-primary" type="submit">Log out</button>
+          </form>
+      </li>
+    </ul>
+
+    <div class="Tweetpad">
+    <form method="GET" action="/tweet">
+        <div class="form-group">
+          
+          <textarea name="tweet" class="form-control" id="tweetbox" aria-describedby="emailHelp" placeholder="say something...">
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post Tweet!</button>
+    </form>
+    </div>
+
+    <div class="TweetArea">
+      <h3>Tweets for you</h3>
+      <div class="Tweet">
+        
+      </div>
+    </div>
+
+    <div class="Sidebar">
+      <h3>Trending hastags</h3>
+      <ol>
+          <li>#test</li>
+          <li>#test</li>
+          <li>#test</li>
+      </ol>
+    </div>
+    
+    {% else %}
+    <!-- ANONYMOUS USER'S FRONT PAGE------------------------->
+    <h1>Please sign in</h1>
+    <form action='/login' method="POST">
+          <div class="form-group">
+            <label for="usernameInput">Username</label>
+            <input name="username" type="username" class="form-control" id="usernameInput" placeholder="Username">
+          </div>
+          <br>
+          <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>  
+          </div>
+    </form>
+    Or <a href="/register">register...</a>
+    {% endif %}
+    
+  </body>
+</html>

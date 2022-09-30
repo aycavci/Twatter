@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="https://getbootstrap.com/1.0.0/assets/css/bootstrap-1.0.0.min.css">
+
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+      {% for pair in result%}
+      <div class="row">
+        <h2> {{ pair['user'] }} </h2>
+        <small> {{ pair['bio'] }} </small>
+        <form action="follow/{{ pair['user'] }}">
+          <button type="submit" class="btn btn-primary">Follow</button>
+        </form>
+      </div>
+      {% endfor %}
+  </body>
+</html>
