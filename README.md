@@ -37,4 +37,3 @@ The default ports have been changed to prevent port conflicts in NARGA:
 
 * Remove ugly from the frontend
 * Complete last few DB queries
-* ????
